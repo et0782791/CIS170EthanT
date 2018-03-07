@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CalculateInterestRate.iml" filepath="$PROJECT_DIR$/CalculateInterestRate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/InterestRate.iml" filepath="$PROJECT_DIR$/InterestRate.iml" />
     </modules>
   </component>
 </project>
