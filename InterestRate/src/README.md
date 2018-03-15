@@ -1,4 +1,4 @@
-# Project Title
+# Ex 16-13 Compare Interest Rates
 
 Project that calculates interest rate after a specified amount of time, at different interest rates.
 
@@ -6,6 +6,10 @@ Project that calculates interest rate after a specified amount of time, at diffe
 
 ![Sample Output](README.jpg)
 
+
+## Planning??
+
+## Testing??
 ### Design
 
 I explored some different areas in javafx, such as the button shadow.
