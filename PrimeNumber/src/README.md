@@ -12,7 +12,7 @@ This project took a lot of what we did in the project 22.14, used an algorithm t
 Design
 
 I'm not going to lie, this project was quite difficult. Luckily, with the videos on 22.08 on youtube, I was able to analyze the code and understand
-what was going on. Over the summer I plan on taking a Data Structures course on Udemy so I can get an even deeper understanding on algorithms.
+what was going on.
 
 Testing
 
