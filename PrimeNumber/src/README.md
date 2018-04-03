@@ -1,4 +1,4 @@
-#rime Numbers up to (n)
+Prime Numbers up to (n)
 
 This program finds all prime numbers up to (n). N being whatever you set N to be. In this case, I set it equal to 20,000 for simplicity and efficiency.
 
