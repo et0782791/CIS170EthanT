@@ -1,43 +1,90 @@
-import java.util.*;
-
+import java.io.EOFException;
+import java.io.IOException;
+import java.io.RandomAccessFile;
 
 public class Main {
+    public static void main(String[] args) throws IOException {
 
-    public static void main(String[] args)
-    {
-	    Scanner input = new Scanner(System.in);
+        //determines how high of a number to look for primes
+        long n = 20_000;
 
-	    int number = 0;
-        int i = 0;
-        String primeNumbers = "";
+        //creates a new array list to store the primes
+        java.util.List<Long> aList = new java.util.ArrayList<>();
 
-        System.out.println("Enter a number to see the prime numbers up to");
-        int n  = input.nextInt();
+        //Creates a .dat file to store the primes in
+        RandomAccessFile file = new RandomAccessFile("PrimeNumbers.dat", "rw");
 
-        // For loop that determines prime number while i is less than or equal to n
-        for (i = 1; i <= n; i++)
-        {
-            // counter variable
-            int counter = 0;
 
-            for(number = i; number >= 1; number--)
-            {
-                // if i is divisible by number with a remainder of zero, it is not prime.
-                if(i % number == 0)
-                {
-                    //adds the counter
-                    counter = counter + 1;
+        long count = 0; // Count the number of prime numbers
+        long number = 2; // A number to be tested for primeness
+        int squareRoot = 1; // Check whether number <= squareRoot
+
+        if(file.length() > 0) {
+            file.seek(file.length() - 8);
+            number = file.readLong() + 1;
+            file.seek(0);
+            try {
+                for (int i = 0; i < 10000; i++) {
+                    aList.add(file.readLong());
                 }
+            } catch (EOFException e) {
             }
-            if (counter == 2)
-            {
-                //Appended the Prime number to the String
-                primeNumbers = primeNumbers + i + " ";
-            }
+
+            squareRoot = (int)(Math.sqrt(number)) + 1;
+            count = file.length() / 8;
         }
 
-        System.out.println("The prime numbers between 1 and " + n + " are:");
-        System.out.println(primeNumbers);
 
+        //finds primes
+        while (number <= n) {
+            boolean isPrime = true;
+            if (squareRoot * squareRoot < number)
+                squareRoot++;
+
+            while(true) {
+                isPrime = true;
+                int k;
+                for (k = 0; k < aList.size() && aList.get(k) <= squareRoot; k++) {
+                    if (number % aList.get(k) == 0) {
+                        isPrime = false;
+                        break;
+                    }
+                }
+                if (file.getFilePointer() == file.length()) {
+                    break;
+                }
+
+                if (!isPrime) {
+                    break;
+                } else  {
+                    aList.clear();
+                    try {
+                        for (int i = 0; i < 10000; i++) {
+                            aList.add(file.readLong());
+                        }
+                    } catch (EOFException e) {
+                    }
+                }
+            }
+
+            if (isPrime) {
+                count++;
+                System.out.println(count + "\t" + number + "\t" + aList.size());
+                file.writeLong(number);
+                aList.clear();
+                file.seek(0);
+                try {
+                    for (int i = 0; i < 10000; i++) {
+                        aList.add(file.readLong());
+                    }
+                } catch (EOFException e) {
+                }
+            }
+
+            number++;
+        }
+
+        System.out.println("\n" + count + " prime(s) less than or equal to " + n);
+        file.close();
     }
 }
