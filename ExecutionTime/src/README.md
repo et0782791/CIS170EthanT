@@ -1,75 +1,26 @@
-# Project Title
+# Execution Time 22.14
 
-One Paragraph of project description goes here
+This project compares the time it takes for 3 different algorithms to find all the prime numbers (n). (n) being 8, 10, 14, 16, and 18
+million.
 
 ## Example Output
 
-This image will display as your example output. Name the image README.jpg in your project folder.
 
 ![Sample Output](README.jpg)
 
 ## Analysis Steps
 
-This section should restate the assignment and explain how you analyzed the requirements in order 
-to develop a solution.
+I decided to put the 3 different listings in 3 different classes. I put the code into a method called returnPrime, which took in
+a long (n). When the method is invoked, it finds the beginning and end time and subtracts the start time from the end time to
+get how long it took in milliseconds.
 
 ### Design
 
-How did you approach your program design? Did you use multiple classes to define various objects?
+I used classes because I could create 3 class objects and give it whatever parameter I wanted for (n).
 
-```
-Give examples
-```
-
-### Testing
-
-A step by step series of examples that you developed to properly test the program. 
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Notes
 
-Explain any issues or testing instructions.
+My issue was that I couldn't put prime.returnPrime into a print line, so I decided against a table. I believe my output is fine, but
+I was spending more time trying to format the output than I was typing the actual code.
 
-## Do not change content below this line
-## Adapted from a README Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
