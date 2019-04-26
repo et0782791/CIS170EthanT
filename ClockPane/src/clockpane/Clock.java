@@ -7,7 +7,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
-
+/// header comments will be required after spring break
+/// good use of class, inheritance and methods
 public class Clock extends Pane
 {
     private int hour;
