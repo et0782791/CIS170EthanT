@@ -1,3 +1,6 @@
+<!-- The image looks great! Now, let's go ahead and add some textual information. Fill in all of the information down to the
+do not change below this line comment -->
+
 # Project Title
 
 One Paragraph of project description goes here
