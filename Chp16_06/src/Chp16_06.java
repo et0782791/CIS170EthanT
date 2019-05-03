@@ -6,7 +6,12 @@ import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
-
+/**
+/    Class: Chp16_06
+/    @autho: Ethan
+/    Date: 3/15
+/    Purpose: some purpose
+*/
 public class Chp16_06 extends Application {
 
     @Override
